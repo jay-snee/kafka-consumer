@@ -52,3 +52,6 @@ gem 'racecar'
 
 # ActiveJob adapter
 gem 'sidekiq'
+
+# Fake 'Article' data generator
+gem 'faker'
