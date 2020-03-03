@@ -2,7 +2,8 @@
 
 # Article post processing job
 class ArticleProcessingJob < ApplicationJob
-  def perform(*args)
-    logger.info "Running job - #{args}"
+  def perform(article_data)
+    attributes = JSON.parse(article_data)
+    Article.create(attributes)
   end
 end
