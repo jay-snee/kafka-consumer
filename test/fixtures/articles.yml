@@ -11,3 +11,10 @@ two: {
   body: "Yet more text here",
   author: "Fred Mcfrederson"
 }
+
+<% 1.upto(1000) do |i| %>
+article_<%= i %>: 
+  title: "My lovely title"
+  body: "Some more text here"
+  author: "Bob McBoberson"
+<% end %>
