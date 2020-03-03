@@ -55,3 +55,6 @@ gem 'sidekiq'
 
 # Fake 'Article' data generator
 gem 'faker'
+
+# Kaminari model pagination
+gem 'kaminari'
