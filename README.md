@@ -22,10 +22,18 @@
 `foreman start`
 
 The application will immediatly spawn four processes: 
-* A web pod to server the REST API
+* A web pod to serve the REST API
 * A Sidekiq async background worker for post processing
 * A Racecar Kafka consumer to recieve messages and add them to the async procesing pipeline
 * A Producer which is a script in bin/ that continually loads 'articles' onto the Kafka queue
 
 ## Test
 `rails test`
+
+## Required Environment Variables
+
+`DATABASE_URL=postgresql://jay@localhost:5432/kafka-consumer-dev`
+`TEST_DATABASE_URL=postgresql://jay@localhost:5432/kafka-consumer-test`
+`KAFKA_TOPIC=articles-test`
+`KAFKA_BROKER=localhost:9092`
+`KAFKA_CLIENT_ID=kafka_consumer`
