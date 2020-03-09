@@ -27,6 +27,10 @@ The application will immediatly spawn four processes:
 * A Racecar Kafka consumer to recieve messages and add them to the async procesing pipeline
 * A Producer which is a script in bin/ that continually loads 'articles' onto the Kafka queue
 
+Sidekiq UI can be viewed here - http://localhost:5000/sidekiq/
+
+These processes are designed to be deployed in highly scalable formations via (buildpack)[https://www.buildpacks.io] based (OCI format containers)[https://github.com/opencontainers/image-spec] on single node platforms such as (Dokku)[http://dokku.viewdocs.io/dokku/] or larger Kubernetes based platforms such as (Hephy/Deis)[https://github.com/teamhephy/workflow] in a (12Factor)[https://12factor.net] compliant architecture.
+
 ## Test
 `rails test`
 
