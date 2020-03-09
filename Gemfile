@@ -32,6 +32,8 @@ group :development, :test do
 
   # Local environment storage
   gem 'dotenv-rails'
+  gem 'faker'
+  gem 'pry'
 end
 
 group :development do
@@ -65,3 +67,6 @@ gem 'faker'
 
 # Kaminari model pagination
 gem 'kaminari'
+
+# Search inerface for Postgres
+gem 'pg_search'
