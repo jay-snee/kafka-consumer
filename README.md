@@ -18,7 +18,9 @@
 * `redis-server`
 
 ### Application
+
 `bundle install`
+
 `bundle exec rails db:setup`
 
 ## Run
