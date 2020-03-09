@@ -30,10 +30,11 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
+  # Fake 'Article' data generator
+  gem 'faker'
+
   # Local environment storage
   gem 'dotenv-rails'
-  gem 'faker'
-  gem 'pry'
 end
 
 group :development do
@@ -61,9 +62,6 @@ gem 'racecar'
 
 # ActiveJob adapter
 gem 'sidekiq'
-
-# Fake 'Article' data generator
-gem 'faker'
 
 # Kaminari model pagination
 gem 'kaminari'
