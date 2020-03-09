@@ -7,16 +7,19 @@
 
 ## Installation
 
-### Dependencies
+### Install Dependencies
 * `brew cask install homebrew/cask-versions/adoptopenjdk8`
 * `brew install kafka`
-* `zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties & kafka-server-start /usr/local/etc/kafka/server.properties`
 * `brew install redis`
-* `redis-server`
 * `gem install foreman`
+
+### Run Dependencies
+* `zookeeper-server-start /usr/local/etc/kafka/zookeeper.properties & kafka-server-start /usr/local/etc/kafka/server.properties`
+* `redis-server`
 
 ### Application
 `bundle install`
+`bundle exec rails db:setup`
 
 ## Run
 `foreman start`
