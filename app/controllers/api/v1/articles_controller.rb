@@ -6,6 +6,11 @@ module Api
         @articles = Article.order('created_at DESC').page(page).per(10)
         render json: @articles
       end
+
+      def show
+        @article = Article.find(params[:id])
+        render json: @article
+      end
     end
   end
 end

@@ -3,9 +3,9 @@
 <% 1.upto(1000) do |i| %>
 article_<%= i %>: 
   data: [
-    {"hl1": "This is my title #{i}"},
-    {"hl2": "This is a secondary heading #{i}"},
-    {"para": "this is a paragraph #{i}"},
-    {"para": "and so is this #{i}"}
+    {"hl1": "This is my title <%= i %>"},
+    {"hl2": "This is a secondary heading <%= i %>"},
+    {"para": "this is a first paragraph <%= i %>"},
+    {"para": "and this is not <%= i %>"}
   ]
 <% end %>
