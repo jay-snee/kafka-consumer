@@ -2,7 +2,7 @@
 
 # Kafka consumer class.
 class ArticleConsumer < Racecar::Consumer
-  subscribes_to 'test'
+  subscribes_to 'articles-test'
 
   def process(message)
     # It's probably a bad idea passing a variable

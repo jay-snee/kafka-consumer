@@ -1,0 +1,53 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# Listens to the user-updates(-production) topic and makes the entities followed by a
+# user also available in Brands & Topics as a TopicFollow
+
+require_relative '../config/environment'
+
+require 'cgi'
+require 'rdkafka'
+
+def generate_article(current_time)
+  {
+    bnl_id: SecureRandom.uuid,
+    published_at: Time.at(current_time).utc,
+    body: generate_body
+  }
+end
+
+def generate_body
+  hl1 = [{ type: 'hl1', content: Faker::Lorem.sentence }]
+  paragraphs = []
+
+  rand(2..5).times do
+    paragraphs << { type: 'para', content: Faker::Lorem.paragraph }
+  end
+
+  hl1 + paragraphs
+end
+
+config = {
+  'bootstrap.servers' => 'localhost:9092'
+}
+
+producer = Rdkafka::Config.new(config).producer
+
+trap('INT') { throw :sigint }
+
+current_time = 1_514_800_800 # 2018-01-01T10:00:00Z
+
+catch :sigint do
+  loop do
+    current_time += rand(1..1000)
+    return if current_time > Time.now.to_i
+
+    sleep rand(1..5)
+    producer.produce(
+      topic: 'articles-test',
+      timestamp: current_time * 1000, # milliseconds
+      payload: generate_article(current_time).to_json
+    ).wait
+  end
+end

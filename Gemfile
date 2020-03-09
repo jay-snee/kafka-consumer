@@ -35,6 +35,9 @@ group :development, :test do
 
   # Local environment storage
   gem 'dotenv-rails'
+
+  # Producer dependencies
+  gem 'rdkafka'
 end
 
 group :development do
