@@ -29,6 +29,8 @@ The application will immediatly spawn four processes:
 
 Sidekiq UI can be viewed here - http://localhost:5000/sidekiq/
 
+REST API Documentation can be found here - https://documenter.getpostman.com/view/7472021/SzRxXWnB?version=latest
+
 These processes are designed to be deployed in highly scalable formations via [buildpack](https://www.buildpacks.io) based [OCI format containers](https://github.com/opencontainers/image-spec) on single node platforms such as [Dokku](http://dokku.viewdocs.io/dokku/) or larger Kubernetes based platforms such as [Hephy/Deis](https://github.com/teamhephy/workflow) in a [12Factor](https://12factor.net) compliant architecture.
 
 ## Test
