@@ -10,6 +10,8 @@ class ArticleConsumer < Racecar::Consumer
     # but I've left it as is for this trivial example
     # as otherwise there'd be nothing to do in the async job.
 
+    logger.info message.value
+
     ArticleProcessingJob.perform_later message.value
   end
 end

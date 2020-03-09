@@ -5,9 +5,9 @@ article_<%= i %>:
   bnl_id: <%= SecureRandom.uuid %>
   published_at: <%= DateTime.now - rand(1..10).days %>
   body: [
-    {"hl1": "This is my title <%= i %>"},
-    {"hl2": "This is a secondary heading <%= i %>"},
-    {"para": "this is a first paragraph <%= i %>"},
-    {"para": "and this is not <%= i %>"}
+    {"type": "hl1", "content": "This is my title <%= i %>"},
+    {"type": "hl2", "content": "This is a secondary heading <%= i %>"},
+    {"type": "para", "content": "this is a first paragraph <%= i %>"},
+    {"type": "para", "content": "and this is not <%= i %>"}
   ]
 <% end %>

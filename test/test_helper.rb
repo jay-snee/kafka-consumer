@@ -20,10 +20,10 @@ module ActiveSupport
           bnl_id: SecureRandom.uuid,
           published_at: (DateTime.now + rand(-10..10).days),
           body: [
-            { "hl1": title },
-            { "para": paragraph },
-            { "para": paragraph },
-            { "para": paragraph }
+            { "type": "hl1", "content": title },
+            { "type": "para", "content": paragraph },
+            { "type": "para", "content": paragraph },
+            { "type": "para", "content": paragraph }
           ]
         )
       end
