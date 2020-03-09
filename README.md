@@ -32,8 +32,8 @@ The application will immediatly spawn four processes:
 
 ## Required Environment Variables
 
-* `DATABASE_URL=postgresql://jay@localhost:5432/kafka-consumer-dev`
-* `TEST_DATABASE_URL=postgresql://jay@localhost:5432/kafka-consumer-test`
+* `DATABASE_URL=postgresql://user:pass@localhost:5432/kafka-consumer-dev`
+* `TEST_DATABASE_URL=postgresql://user:pass@localhost:5432/kafka-consumer-test`
 * `KAFKA_TOPIC=articles-test`
 * `KAFKA_BROKER=localhost:9092`
 * `KAFKA_CLIENT_ID=kafka_consumer`
