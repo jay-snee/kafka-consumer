@@ -5,13 +5,7 @@ class ArticleConsumer < Racecar::Consumer
   subscribes_to 'articles-test'
 
   def process(message)
-    # It's probably a bad idea passing a variable
-    # sized payload through as params to a Job
-    # but I've left it as is for this trivial example
-    # as otherwise there'd be nothing to do in the async job.
-
-    logger.info message.value
-
-    ArticleProcessingJob.perform_later message.value
+    article = Article.create(message.value)
+    ArticleProcessingJob.perform_later article.bnl_id
   end
 end

@@ -2,8 +2,9 @@
 
 # Article post processing job
 class ArticleProcessingJob < ApplicationJob
-  def perform(article_data)
-    attributes = JSON.parse(article_data)
-    Article.create(attributes)
+  def perform(bnl_id)
+    article = Article.where(bnl_id: bnl_id).first
+    
+    # Do some heavy lifting
   end
 end

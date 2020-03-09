@@ -3,14 +3,7 @@
 require 'test_helper'
 
 class ArticleProcessingJobTest < ActiveSupport::TestCase
-  test 'it should create an Article object' do
-    count = Article.count
-    attributes = articles.first.attributes.except(
-      'id',
-      'created_at',
-      'updated_at'
-    )
-    ArticleProcessingJob.perform_now(attributes.to_json)
-    assert_equal Article.count, (count + 1)
+  test 'it should do something' do
+    skip("Moved model creating to the consumer so this has no actual purpose currently")
   end
 end

@@ -32,10 +32,10 @@ module Api
       end
 
       test 'GET#show should return a single article' do
-        article_id = articles.first.id
-        get api_v1_article_url(id: articles.first.id), as: :json
+        article_id = articles.first.bnl_id
+        get api_v1_article_url(id: articles.first.bnl_id), as: :json
         payload = JSON.parse(response.body)
-        assert_equal(article_id, payload['id'])
+        assert_equal(article_id, payload['bnl_id'])
       end
 
       test 'GET#search returns empty array with missing search param' do

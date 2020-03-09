@@ -13,7 +13,7 @@ module Api
       end
 
       def show
-        @article = Article.find(params[:id])
+        @article = Article.where(bnl_id: params[:id]).first
         render json: @article
       end
 
