@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 2020_03_03_132639) do
 
   create_table "articles", force: :cascade do |t|
-    t.string "title", null: false
-    t.text "body"
-    t.string "author"
+    t.json "data", default: {}, null: false
+    t.string "title"
+    t.text "summary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

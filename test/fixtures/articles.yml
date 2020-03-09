@@ -1,20 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one: {
-  title: "My lovely title",
-  body: "Some more text here",
-  author: "Bob McBoberson"
-}
-
-two: {
-  title: "My second lovely title",
-  body: "Yet more text here",
-  author: "Fred Mcfrederson"
-}
-
 <% 1.upto(1000) do |i| %>
 article_<%= i %>: 
-  title: "My lovely title"
-  body: "Some more text here"
-  author: "Bob McBoberson"
+  data: [
+    {"hl1": "This is my title #{i}"},
+    {"hl2": "This is a secondary heading #{i}"},
+    {"para": "this is a paragraph #{i}"},
+    {"para": "and so is this #{i}"}
+  ]
 <% end %>
