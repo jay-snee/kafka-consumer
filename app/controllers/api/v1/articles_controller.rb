@@ -15,6 +15,9 @@ module Api
         @article = Article.find(params[:id])
         render json: @article
       end
+
+      def search
+      end
     end
   end
 end

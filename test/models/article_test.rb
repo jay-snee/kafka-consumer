@@ -22,7 +22,7 @@ class ArticleTest < ActiveSupport::TestCase
   end
 
   test 'it has a searchable title' do
-    10.times do
+    7.times do
       Article.create(
         data: [
           { "hl1": "Bingo Bango" },
@@ -33,13 +33,13 @@ class ArticleTest < ActiveSupport::TestCase
       )
     end
     search_results = PgSearch.multisearch('Bingo Bango')
-    assert_equal(10, search_results.count)
-    assert_equal(1010, Article.count)
+    assert_equal(7, search_results.count)
+    assert_equal(1007, Article.count)
   end
 
   test 'it has a searchable summary' do
     para_content = Faker::Lorem.paragraph
-    10.times do
+    4.times do
       Article.create(
         data: [
           { "hl1": "Bingo Bango" },
@@ -50,7 +50,7 @@ class ArticleTest < ActiveSupport::TestCase
       )
     end
     search_results = PgSearch.multisearch(para_content)
-    assert_equal(10, search_results.count)
-    assert_equal(1010, Article.count)
+    assert_equal(4, search_results.count)
+    assert_equal(1004, Article.count)
   end
 end
