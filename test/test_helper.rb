@@ -17,7 +17,9 @@ module ActiveSupport
     def generate_articles(count = 10, title = Faker::ChuckNorris.fact, paragraph = Faker::Lorem.paragraph)
       count.times do
         Article.create(
-          data: [
+          bnl_id: SecureRandom.uuid,
+          published_at: (DateTime.now + rand(-10..10).days),
+          body: [
             { "hl1": title },
             { "para": paragraph },
             { "para": paragraph },

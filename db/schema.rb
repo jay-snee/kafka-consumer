@@ -10,17 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_09_182350) do
+ActiveRecord::Schema.define(version: 2020_03_09_203350) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "articles", force: :cascade do |t|
-    t.json "data", default: {}, null: false
+    t.json "body", default: {}, null: false
     t.string "title"
     t.text "summary"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "bnl_id", null: false
+    t.datetime "published_at", null: false
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
