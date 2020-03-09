@@ -1,16 +1,16 @@
 # These config values will be shared by all environments but can be overridden.
 common: &common
-  client_id: "kafka_consumer"
+  client_id: <%= ENV['KAFKA_CLIENT_ID'] %>
 
 development:
   <<: *common
   brokers:
-    - localhost:9092
+    - <%= ENV['KAFKA_BROKER'] %>
 
 test:
   <<: *common
   brokers:
-    - localhost:9092
+    - <%= ENV['KAFKA_BROKER'] %>
 
 production:
   <<: *common

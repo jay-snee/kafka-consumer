@@ -2,10 +2,11 @@
 
 # Kafka consumer class.
 class ArticleConsumer < Racecar::Consumer
-  subscribes_to 'articles-test'
+  subscribes_to ENV['KAFKA_TOPIC']
 
   def process(message)
-    article = Article.create(message.value)
+    message_data = JSON.parse message.value
+    article = Article.create(message_data)
     ArticleProcessingJob.perform_later article.bnl_id
   end
 end

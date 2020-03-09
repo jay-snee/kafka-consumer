@@ -25,7 +25,7 @@ The application will immediatly spawn four processes:
 * A web pod to server the REST API
 * A Sidekiq async background worker for post processing
 * A Racecar Kafka consumer to recieve messages and add them to the procesing pipeline
-* A Producer which is a script in bin/ that loads 'articles' onto the Kafka queue
+* A Producer which is a script in bin/ that continually loads 'articles' onto the Kafka queue
 
 ## Test
 `rails test`
