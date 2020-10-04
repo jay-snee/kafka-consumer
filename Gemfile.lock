@@ -128,7 +128,7 @@ GEM
       activerecord (>= 5.2)
       activesupport (>= 5.2)
     public_suffix (4.0.3)
-    puma (3.12.4)
+    puma (3.12.6)
     racecar (1.0.1)
       king_konf (~> 0.3.7)
       ruby-kafka (~> 0.7.8)
@@ -243,7 +243,7 @@ DEPENDENCIES
   minitest (= 5.13)
   pg
   pg_search
-  puma (~> 3.11)
+  puma (~> 3.12)
   racecar
   rails (~> 6.0.0)
   rdkafka
