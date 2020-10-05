@@ -237,7 +237,7 @@ DEPENDENCIES
   minitest (= 5.13)
   pg
   pg_search
-  puma (~> 3.11)
+  puma (~> 3.12)
   racecar
   rails (~> 6.0.0)
   rdkafka
